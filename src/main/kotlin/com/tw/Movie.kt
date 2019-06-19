@@ -7,6 +7,5 @@ import javax.persistence.Table
 
 @Entity
 @Table(name = "movies")
-data class Movie(@Id val imdbId: String = "InvalidID", @Column val title: String = "InvalidTitle") {
-}
+data class Movie(@Id val imdbId: String = "InvalidId", @Column val title: String = "InvalidTitle")
 
