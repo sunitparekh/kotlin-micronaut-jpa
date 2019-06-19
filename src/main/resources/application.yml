@@ -4,7 +4,7 @@ micronaut:
     name: movie-jpa-service
 ---
 endpoints:
-  liquibase:
+  all:
     enabled: true
     sensitive: false
 ---
