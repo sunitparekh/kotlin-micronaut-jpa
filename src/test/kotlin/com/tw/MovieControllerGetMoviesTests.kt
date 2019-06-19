@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 import javax.inject.Inject
 
 @MicronautTest
-class MovieControllerGetMoviesTests() {
+class MovieControllerGetMoviesTests {
 
     @Inject
     @field:Client("/")
