@@ -1,6 +1,7 @@
 package com.tw
 
 import io.kotlintest.matchers.shouldBe
+import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.test.annotation.MicronautTest
@@ -17,11 +18,12 @@ class MovieControllerGetMovieTests {
     @Test
     fun `get a movie`() {
 
-        val movie = client.toBlocking().retrieve("/movies/1234", Movie::class.java)
+        val response = client.toBlocking().exchange("/movies/1234", Movie::class.java)
 
-        movie.imdbId shouldBe "1234"
-        movie.title shouldBe "My First Movie"
-
+        response.apply { status shouldBe HttpStatus.OK }
+                .body()!!
+                .apply { imdbId shouldBe "1234" }
+                .apply { title shouldBe "My First Movie" }
     }
 
 
