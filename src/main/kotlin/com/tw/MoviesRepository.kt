@@ -12,5 +12,6 @@ open class MoviesRepository(@PersistenceContext private val manager: EntityManag
     open fun findById(imdbId: String) = manager.find(Movie::class.java, imdbId)
 
     @Transactional(readOnly = true)
-    open fun findAll(): List<Movie> = manager.createQuery("from Movie", Movie::class.java).resultList
+    open fun findAll() = manager
+            .createQuery("from Movie", Movie::class.java).resultList
 }

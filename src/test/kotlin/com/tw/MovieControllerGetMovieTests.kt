@@ -17,8 +17,8 @@ class MovieControllerGetMovieTests {
 
     @Test
     fun `get a movie`() {
-
-        val response = client.toBlocking().exchange("/movies/1234", Movie::class.java)
+        val response = client.toBlocking()
+                .exchange("/movies/1234", Movie::class.java)
 
         response.apply { status shouldBe HttpStatus.OK }
                 .body()!!

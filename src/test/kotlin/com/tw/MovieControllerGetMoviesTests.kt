@@ -19,7 +19,8 @@ class MovieControllerGetMoviesTests {
     @Test
     fun `get list of movies`() {
         val request = HttpRequest.GET<Any>("/movies")
-        val result = client.toBlocking().retrieve(request, Argument.of(List::class.java, Movie::class.java))
+        val result = client.toBlocking()
+                .retrieve(request, Argument.of(List::class.java, Movie::class.java))
 
         result.size shouldBe 2
         var movie = result[0] as Movie
