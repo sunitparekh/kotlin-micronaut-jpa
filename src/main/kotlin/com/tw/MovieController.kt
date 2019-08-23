@@ -7,9 +7,9 @@ import io.micronaut.http.annotation.Get
 class MovieController(private val movies: MoviesRepository) {
 
     @Get("/{imdbId}")
-    fun findMovies(imdbId: String)= movies.findById(imdbId)
+    fun findMovies(imdbId: String) = movies.findById(imdbId)
 
     @Get("/")
-    fun findMovies()= movies.findAll()
+    fun findMovies() = movies.findAll()
 
 }

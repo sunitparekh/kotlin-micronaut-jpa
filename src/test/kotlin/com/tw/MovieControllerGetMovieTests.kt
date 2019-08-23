@@ -1,6 +1,6 @@
 package com.tw
 
-import io.kotlintest.matchers.shouldBe
+import io.kotlintest.shouldBe
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
